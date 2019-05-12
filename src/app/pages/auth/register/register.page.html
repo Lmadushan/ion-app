@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dux | Travel with Us!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-item>
+    <ion-label>
+      <h2 style="text-align:center">How do you want to continue?</h2>
+    </ion-label>
+  </ion-item>
+
+  <br>
+  <br>
+  <ion-label>
+      <p style="text-align:center">I don't have an account</p>
+    </ion-label>
+  <ion-button expand="block" color="secondary" [routerLink]="['register-tourist']">Register As a Tourist</ion-button>
+  <br>
+  <ion-label>
+    <p style="text-align:center">or</p>
+  </ion-label>
+  <br>
+  <ion-button expand="block" color="tertiary" [routerLink]="['register-guide']">Register As a Guide</ion-button>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <ion-label>
+    <p style="text-align:center">I have an account</p>
+  </ion-label>
+  <ion-button expand="block" color="primary" [routerLink]="['/sign-in']">Login</ion-button>
+
+</ion-content>

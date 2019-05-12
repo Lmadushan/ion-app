@@ -16,9 +16,9 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
+      title: 'Logout',
       url: '/list',
-      icon: 'list'
+      icon: 'power'
     }
   ];
 

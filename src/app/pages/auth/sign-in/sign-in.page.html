@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>sign-in</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <div class="displayTable">
+    <div class="displayTableCell">
+      <br>
+      <br>
+      <br>
+      <div class="authBlock">
+        <ion-label style="text-align:center; font-family:'Courier New', Courier, monospace">
+          <h1>Sign In</h1>
+        </ion-label>
+        <br>
+        <br>
+        <div class="formGroup">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="text" class="formControl" #userName required></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="formGroup">
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" class="formControl" #userPassword required></ion-input>
+          </ion-item>
+        </div>
+        <br>
+        <!-- <ion-button expand="block" fill="solid" color="primary"
+          (click)="authService.SignIn(userName.value, userPassword.value)" value="Log in">Login</ion-button>
+ -->
+ <ion-button expand="block" fill="solid" color="primary" [routerLink]="['/dashboard']">Login</ion-button>
+
+        <br>
+        <div class="forgotPassword" style="text-align:center">
+          <ion-button color="medium" [routerLink]="['/forgot-password']">Forgot Password?</ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="">
+    <ion-button expand="block" color="danger" [routerLink]="['/']">back</ion-button>
+  </div>
+</ion-content>
