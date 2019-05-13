@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>sign-in</ion-title>
+    <ion-title>Dux | Sign In</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -33,15 +33,27 @@
           </ion-item>
         </div>
         <br>
-        <!-- <ion-button expand="block" fill="solid" color="primary"
+
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div>
+                <ion-button style="width: 90%" fill="solid" color="primary" [routerLink]="['/dashboard']">Login</ion-button>
+                <!-- <ion-button expand="block" fill="solid" color="primary"
           (click)="authService.SignIn(userName.value, userPassword.value)" value="Log in">Login</ion-button>
  -->
- <ion-button expand="block" fill="solid" color="primary" [routerLink]="['/dashboard']">Login</ion-button>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+                <ion-button color="medium" [routerLink]="['/forgot-password']">Forgot Password?</ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
         <br>
-        <div class="forgotPassword" style="text-align:center">
-          <ion-button color="medium" [routerLink]="['/forgot-password']">Forgot Password?</ion-button>
-        </div>
+
       </div>
     </div>
   </div>
@@ -49,7 +61,7 @@
   <br>
   <br>
   <br>
-  <div class="">
-    <ion-button expand="block" color="danger" [routerLink]="['/']">back</ion-button>
+  <div class="back-btn">
+    <ion-button expand="block" fill="solid" color="danger" [routerLink]="['/']">Cancel</ion-button>
   </div>
 </ion-content>
