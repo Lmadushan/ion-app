@@ -5,5 +5,34 @@
 </ion-header>
 
 <ion-content>
-    <ion-button [routerLink]="['/']">back</ion-button>
+
+  <br>
+  <ion-label style="text-align:center; font-family:'Courier New', Courier, monospace">
+    <h1>Sign Up</h1>
+  </ion-label>
+  <br>
+  <ion-item>
+    <ion-label position="floating">Email Address</ion-label>
+    <ion-input type="email" class="formControl" #userEmail required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="password" class="formControl" #userPwd required></ion-input>
+  </ion-item>
+  <br>
+
+  <ion-button expand="block" fill="solid" color="primary" type="button" value="Sign Up"
+    (click)="authService.SignUpGuide(userEmail.value, userPwd.value)">Signup</ion-button>
+
+  <br><br>
+  <ion-item>
+    <ion-label>I already have an account</ion-label>
+    <ion-button expand="block" fill="solid" color="primary" [routerLink]="['/sign-in']">Login</ion-button>
+  </ion-item>
+
+  <div class="back-btn">
+    <ion-button expand="block" fill="solid" color="danger" [routerLink]="['/']">back</ion-button>
+  </div>
+
 </ion-content>

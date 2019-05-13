@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dux | Verify Email</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-label style="text-align:center; font-family:'Courier New', Courier, monospace">
+    <h2>Thank You for Registering</h2>
+  </ion-label>
+  <br>
+
+  <ion-item *ngIf="authService.user as user">
+    <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+    <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+  </ion-item>
+
+  <!-- Calling SendVerificationMail() method using authService Api -->
+  <ion-item>
+    <ion-button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
+      <ion-icon name="refresh"></ion-icon>
+      Resend Verification Email
+    </ion-button>
+  </ion-item>
+
+  <div class="back-btn">
+    <ion-button expand="block" fill="solid" color="success" [routerLink]="['/sign-in']">Login</ion-button>
+  </div>
+</ion-content>

@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'guide-dashboard', loadChildren: './pages/guide/guide-dashboard/guide-dashboard.module#GuideDashboardPageModule' },
   { path: 'tourist-dashboard', loadChildren: './pages/tourist/tourist-dashboard/tourist-dashboard.module#TouristDashboardPageModule' },
   { path: 'forgot-password', loadChildren: './pages/auth/forgot-password/forgot-password.module#ForgotPasswordPageModule' },
+  { path: 'verify-email', loadChildren: './pages/auth/verify-email/verify-email.module#VerifyEmailPageModule' },
 ];
 
 @NgModule({
