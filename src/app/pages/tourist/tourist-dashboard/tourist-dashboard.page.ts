@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tourist-dashboard.page.scss'],
 })
 export class TouristDashboardPage implements OnInit {
-
+title = "Dux | Find your Guide!"
   constructor() { }
 
   ngOnInit() {
