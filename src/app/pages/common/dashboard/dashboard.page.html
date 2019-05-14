@@ -10,7 +10,7 @@
 </ion-title>
 
 
-<ion-button expand="block" fill="outline" [routerLink]="['/guide-dashboard']">Continue</ion-button>
-<ion-button expand="block" fill="outline" [routerLink]="['/tourist-dashboard']">Continue</ion-button>
+<ion-button expand="block" fill="outline" *ngIf="role=='guide'" [routerLink]="['/user-profile']">Continue</ion-button>
+<ion-button expand="block" fill="outline" *ngIf="role=='tourist'" [routerLink]="['/tourist-dashboard']">Continue</ion-button>
 
 </ion-content>

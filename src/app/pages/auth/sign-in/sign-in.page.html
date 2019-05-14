@@ -38,7 +38,7 @@
           <ion-row>
             <ion-col>
               <div>
-                <ion-button style="width: 90%" fill="solid" color="primary" [routerLink]="['/dashboard']">Login</ion-button>
+                <ion-button style="width: 90%" fill="solid" color="primary" (click)="authService.SignIn(userName.value, userPassword.value)">Login</ion-button>
                 <!-- <ion-button expand="block" fill="solid" color="primary"
           (click)="authService.SignIn(userName.value, userPassword.value)" value="Log in">Login</ion-button>
  -->
