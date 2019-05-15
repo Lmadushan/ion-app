@@ -15,14 +15,14 @@ const routes: Routes = [
   },
 
   //auth routes
-  { path: '', loadChildren: './pages/auth/register/register.module#RegisterPageModule', canActivate: [SecureInnerPagesGuard] },
-  { path: 'sign-in', loadChildren: './pages/auth/sign-in/sign-in.module#SignInPageModule', canActivate: [SecureInnerPagesGuard] },
-  { path: 'register-tourist', loadChildren: './pages/auth/register-tourist/register-tourist.module#RegisterTouristPageModule', canActivate: [SecureInnerPagesGuard] },
-  { path: 'register-guide', loadChildren: './pages/auth/register-guide/register-guide.module#RegisterGuidePageModule', canActivate: [SecureInnerPagesGuard] },
-  { path: 'dashboard', loadChildren: './pages/common/dashboard/dashboard.module#DashboardPageModule', canActivate: [SecureInnerPagesGuard] },
-  { path: 'tourist-dashboard', loadChildren: './pages/tourist/tourist-dashboard/tourist-dashboard.module#TouristDashboardPageModule', canActivate: [SecureInnerPagesGuard] },
-  { path: 'forgot-password', loadChildren: './pages/auth/forgot-password/forgot-password.module#ForgotPasswordPageModule', canActivate: [SecureInnerPagesGuard] },
-  { path: 'verify-email', loadChildren: './pages/auth/verify-email/verify-email.module#VerifyEmailPageModule', canActivate: [SecureInnerPagesGuard] },
+  { path: '', loadChildren: './pages/auth/register/register.module#RegisterPageModule'},
+  { path: 'sign-in', loadChildren: './pages/auth/sign-in/sign-in.module#SignInPageModule'},
+  { path: 'register-tourist', loadChildren: './pages/auth/register-tourist/register-tourist.module#RegisterTouristPageModule'},
+  { path: 'register-guide', loadChildren: './pages/auth/register-guide/register-guide.module#RegisterGuidePageModule'},
+  { path: 'dashboard', loadChildren: './pages/common/dashboard/dashboard.module#DashboardPageModule'},
+  { path: 'tourist-dashboard', loadChildren: './pages/tourist/tourist-dashboard/tourist-dashboard.module#TouristDashboardPageModule'},
+  { path: 'forgot-password', loadChildren: './pages/auth/forgot-password/forgot-password.module#ForgotPasswordPageModule'},
+  { path: 'verify-email', loadChildren: './pages/auth/verify-email/verify-email.module#VerifyEmailPageModule'},
   
   //guide routes
   { path: 'guide-dashboard', loadChildren: './pages/guide/guide-dashboard/guide-dashboard.module#GuideDashboardPageModule', canActivate: [GuideGuard] },
@@ -33,6 +33,7 @@ const routes: Routes = [
   { path: 'tour-requests', loadChildren: './pages/guide/tour-requests/tour-requests.module#TourRequestsPageModule', canActivate: [GuideGuard]},
   { path: 'view-rating', loadChildren: './pages/guide/view-rating/view-rating.module#ViewRatingPageModule', canActivate: [GuideGuard]},
   { path: 'user-profile', loadChildren: './pages/guide/user-profile/user-profile.module#UserProfilePageModule', canActivate: [GuideGuard]},
+  { path: 'tourist-profile', loadChildren: './pages/tourist/tourist-profile/tourist-profile.module#TouristProfilePageModule' },
 ];
 
 @NgModule({
