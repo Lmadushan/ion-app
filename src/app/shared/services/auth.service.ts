@@ -37,14 +37,15 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/dashboard']);
           localStorage.setItem('user', JSON.stringify(result.user));
         });
       }).catch((error) => {
-        window.alert('Ooops! something went wrong');
+        window.alert('Ooops! Enter Valid details');
       })
   }
 
+  //get signed up users data
   getUser() {
     return this.user;
   }
@@ -68,18 +69,6 @@ export class AuthService {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
         this.SetUserDataGuide(result.user);
-        window.alert('Wait until conformation.');
-      }).catch((error) => {
-        window.alert('Please Enter Valid Details.')
-      })
-  }
-
-  SignUpAdmin(email, password) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign
-        up and returns promise */
-        this.SetUserDataAdmin(result.user);
         window.alert('Wait until conformation.');
       }).catch((error) => {
         window.alert('Please Enter Valid Details.')
@@ -149,19 +138,6 @@ export class AuthService {
     })
   }
 
-  AuthSignUpAdmin(provider) {
-    return this.afAuth.auth.signInWithPopup(provider)
-    .then((result) => {
-       this.ngZone.run(() => {
-          this.router.navigate(['./sign-in']);
-        })
-
-        this.SetUserDataAdmin(result.user);
-    }).catch((error) => {
-      window.alert(error)
-    })
-  }
-
   /* Setting up user data when sign in with username/password,
   sign up with username/password and sign in with social auth
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
@@ -193,93 +169,6 @@ export class AuthService {
       emailVerified: false,
       roles: {
         guide: true
-      }
-    }
-    return userRef.set(data, {
-      merge: true
-    })
-  }
-
-  AcceptUserDataGuide(user) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    const data = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: true,
-
-      roles: {
-        guide: true
-      }
-    }
-    return userRef.set(data, {
-      merge: true
-    })
-  }
-
-  RemoveUserDataGuide(user) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    const data = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: false,
-      roles: {
-        guide: false
-      }
-    }
-    return userRef.set(data, {
-      merge: true
-    })
-  }
-
-  RemoveUserDataTourist(user) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    const data = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: false,
-      roles: {
-        tourist: false
-      }
-    }
-    return userRef.set(data, {
-      merge: true
-    })
-  }
-
-  SetUserDataAdmin(user) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    const data = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: false,
-      roles: {
-        admin: true
-      }
-    }
-    return userRef.set(data, {
-      merge: true
-    })
-  }
-
-  AcceptUserDataAdmin(user) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    const data = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: true,
-
-      roles: {
-        admin: true
       }
     }
     return userRef.set(data, {
