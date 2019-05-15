@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class SignInPage implements OnInit {
 
   constructor(
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
