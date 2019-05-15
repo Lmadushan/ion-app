@@ -8,5 +8,26 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-title style="text-align:center; font-family:'Courier New', Courier, monospace">
+      <h1>Locations</h1>
+    </ion-title>
+  </ion-item>
+  <div *ngIf="locations?.length > 0">
+    <div *ngFor="let location of locations">
+      <div *ngIf="location.verified != false">
+        <ion-item>
+          <ion-label>
+            <p>{{location.locationName}}</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </div>
+  </div>
 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/add-loc-uv']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

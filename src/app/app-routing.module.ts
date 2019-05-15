@@ -33,6 +33,9 @@ const routes: Routes = [
   { path: 'tour-requests', loadChildren: './pages/guide/tour-requests/tour-requests.module#TourRequestsPageModule', canActivate: [GuideGuard]},
   { path: 'view-rating', loadChildren: './pages/guide/view-rating/view-rating.module#ViewRatingPageModule', canActivate: [GuideGuard]},
   { path: 'user-profile', loadChildren: './pages/guide/user-profile/user-profile.module#UserProfilePageModule', canActivate: [GuideGuard]},
+  { path: 'add-loc-uv', loadChildren: './pages/guide/add-loc-uv/add-loc-uv.module#AddLocUvPageModule', canActivate: [GuideGuard] },
+
+  //Tourist routes
   { path: 'tourist-profile', loadChildren: './pages/tourist/tourist-profile/tourist-profile.module#TouristProfilePageModule' },
 ];
 

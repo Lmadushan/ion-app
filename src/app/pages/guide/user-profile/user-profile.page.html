@@ -8,5 +8,24 @@
 </ion-header>
 
 <ion-content>
+  <br>
+  <ion-item>
+    <ion-title style="text-align:center">
+      <h1>My Profile</h1>
+    </ion-title>
+  </ion-item>
 
+  <img class="align-self-start mr-5 img-thumbnail rounded-circle"
+    src="{{(user.photoURL) ? user.photoURL : 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2015%2F03%2F04%2F22%2F35%2Fhead-659652_960_720.png&f=1'}}"
+    alt="{{user.displayName}}">
+  <ion-label>
+    <h1>Name: <strong>{{(user.displayName) ? user.displayName : 'None'}}</strong></h1>
+  </ion-label>
+  <p>Email: <strong>{{user.email}}</strong></p>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="create"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
