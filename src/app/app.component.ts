@@ -48,6 +48,7 @@ export class AppComponent implements OnDestroy{
       if (usr) {
         localStorage.setItem('user', JSON.stringify(usr));
         this.user.roles.guide = usr.roles.guide;
+        this.user.roles.tourist = usr.roles.tourist;
         this.user.displayName = usr.displayName;
         this.user.emailVerified = usr.emailVerified;
         this.user.email = usr.email;
