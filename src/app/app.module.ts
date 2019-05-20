@@ -16,7 +16,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
-
+import { StarRatingModule } from 'angular-star-rating';
 @NgModule({
   declarations: [AppComponent,
   ],
@@ -27,7 +27,8 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-AngularFirestoreModule,
+    AngularFirestoreModule,
+    StarRatingModule.forRoot()
   ],
   providers: [
     StatusBar,

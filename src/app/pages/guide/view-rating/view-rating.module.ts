@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ViewRatingPage } from './view-rating.page';
+import { StarRatingModule } from 'angular-star-rating';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    StarRatingModule.forRoot(),
     CommonModule,
     FormsModule,
     IonicModule,
