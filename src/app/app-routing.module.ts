@@ -38,13 +38,13 @@ const routes: Routes = [
   //Tourist routes
   { path: 'tourist-profile', loadChildren: './pages/tourist/tourist-profile/tourist-profile.module#TouristProfilePageModule' },
   { path: 'package-list', loadChildren: './pages/tourist/package-list/package-list.module#PackageListPageModule' },
-  { path: 'rate-list', loadChildren: './pages/tourist/rate-list/rate-list.module#RateListPageModule' },
   { path: 'travel-plan', loadChildren: './pages/tourist/travel-plan/travel-plan.module#TravelPlanPageModule' },
   { path: 'view-guide-profile', loadChildren: './pages/tourist/view-guide-profile/view-guide-profile.module#ViewGuideProfilePageModule' },
   { path: 'view-package', loadChildren: './pages/tourist/view-package/view-package.module#ViewPackagePageModule' },
   { path: 'view-rate', loadChildren: './pages/tourist/view-rate/view-rate.module#ViewRatePageModule' },
   { path: 'view-place', loadChildren: './pages/tourist/view-place/view-place.module#ViewPlacePageModule' },
   { path: 'rate-guide', loadChildren: './pages/tourist/rate-guide/rate-guide.module#RateGuidePageModule' },
+  { path: 'guide-profile/:id', loadChildren: './pages/tourist/guide-profile/guide-profile.module#GuideProfilePageModule' },
 ];
 
 @NgModule({

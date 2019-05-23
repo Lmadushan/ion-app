@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RateService } from 'src/app/shared/services/rate/rate.service';
+import { Rate } from 'src/app/shared/services/rate/rate';
 
 @Component({
   selector: 'app-view-rate',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-rate.page.scss'],
 })
 export class ViewRatePage implements OnInit {
-title="Dux | Rate";
-  constructor() { }
+  title = "Dux | Rate";
+  rates: Rate[];
+  constructor(public rateService: RateService) { }
 
   ngOnInit() {
+
+    this.rateService.getLocation().subscribe(rates => {
+      this.rates = rates;
+      localStorage.setItem('locations', JSON.stringify(rates));
+    });
   }
 
 }

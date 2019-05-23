@@ -8,5 +8,20 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-item>
+    <ion-title style="text-align:center; font-family:'Courier New', Courier, monospace">
+      <h1>Guide Rates</h1>
+    </ion-title>
+  </ion-item>
+  <div *ngIf="rates?.length > 0">
+    <div *ngFor="let rate of rates">
+      <div>
+        <ion-item>
+          <ion-label>
+            <a [routerLink]="['/guide-profile/'+ rate.guideId]" style="text-decoration:none">{{rate.guideId}} - Rs. {{rate.value}}/Hr</a>
+          </ion-label>
+        </ion-item>
+      </div>
+    </div>
+  </div>
 </ion-content>
