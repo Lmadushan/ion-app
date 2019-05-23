@@ -7,8 +7,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="container">
-      <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
-  </div>
+<ion-content style="text-align:center">
+  <ion-title class="title">
+    My Rating
+  </ion-title>
+  <ion-label class="rate-val">
+    {{ avgRating | async }} / 5
+  </ion-label>
+  
 </ion-content>
+
