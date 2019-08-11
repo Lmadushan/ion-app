@@ -16,6 +16,7 @@ export class TouristProfilePage implements OnInit {
     email: '',
     emailVerified: false,
     photoURL: '',
+    contact: '',
     roles: {
       guide: false,
       tourist: false,
@@ -29,6 +30,7 @@ export class TouristProfilePage implements OnInit {
         localStorage.setItem('user', JSON.stringify(usr));
         this.user.roles.guide = usr.roles.guide;
         this.user.displayName = usr.displayName;
+        this.user.contact = usr.contact;
         this.user.emailVerified = usr.emailVerified;
         this.user.email = usr.email;
         this.user.uid = usr.uid;

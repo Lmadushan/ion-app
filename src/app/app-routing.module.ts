@@ -45,6 +45,7 @@ const routes: Routes = [
   { path: 'view-place', loadChildren: './pages/tourist/view-place/view-place.module#ViewPlacePageModule' },
   { path: 'rate-guide', loadChildren: './pages/tourist/rate-guide/rate-guide.module#RateGuidePageModule' },
   { path: 'guide-profile/:id', loadChildren: './pages/tourist/guide-profile/guide-profile.module#GuideProfilePageModule' },
+  { path: 'edit-user-profile', loadChildren: './pages/guide/edit-user-profile/edit-user-profile.module#EditUserProfilePageModule' },
 ];
 
 @NgModule({

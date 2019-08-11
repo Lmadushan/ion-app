@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <img class="align-self-start mr-5 img-thumbnail rounded-circle"
+    src="{{(user.photoURL) ? user.photoURL : 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2015%2F03%2F04%2F22%2F35%2Fhead-659652_960_720.png&f=1'}}"
+    alt="{{user.displayName}}">
+  <ion-item>
+    <ion-label position="floating">Name:</ion-label>
+    <ion-input  #userDisplayName="ngModel" [(ngModel)]="user.displayName" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Email:</ion-label>
+    <ion-input #userEmail="ngModel" [(ngModel)]="user.email" required readonly></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contact Number:</ion-label>
+    <ion-input #userContact="ngModel" [(ngModel)]="user.contact"></ion-input>
+  </ion-item>
+  <ion-button expand="block" fill="outline" (click)="this.editProfile(userDisplayName.value, userEmail.value, userContact.value)">Save Changes</ion-button>
+
+</ion-content>

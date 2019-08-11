@@ -14,6 +14,7 @@ export class UserProfilePage implements OnInit {
     uid: '',
     displayName: '',
     email: '',
+    contact: '',
     emailVerified: false,
     photoURL: '',
     roles: {
@@ -28,8 +29,10 @@ export class UserProfilePage implements OnInit {
       if (usr) {
         localStorage.setItem('user', JSON.stringify(usr));
         this.user.roles.guide = usr.roles.guide;
+        this.user.contact = usr.contact;
         this.user.displayName = usr.displayName;
         this.user.emailVerified = usr.emailVerified;
+        this.user.contact = usr.contact;
         this.user.email = usr.email;
         this.user.uid = usr.uid;
       }
