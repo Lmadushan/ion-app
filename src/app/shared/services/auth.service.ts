@@ -59,7 +59,7 @@ export class AuthService {
         this.SendVerificationMail();
         this.SetUserData(result.user);
       }).catch((error) => {
-        window.alert('Please Enter Valid Details.')
+        window.alert('Please Enter Valid Details.');
       })
   }
 
@@ -71,7 +71,7 @@ export class AuthService {
         this.SetUserDataGuide(result.user);
         window.alert('Wait until conformation.');
       }).catch((error) => {
-        window.alert('Please Enter Valid Details.')
+        window.alert('Please Enter Valid Details.');
       })
   }
 
@@ -146,6 +146,7 @@ export class AuthService {
     const data = {
       uid: user.uid,
       email: user.email,
+      contact: user.comtact,
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: true,
@@ -164,6 +165,7 @@ export class AuthService {
     const data = {
       uid: user.uid,
       email: user.email,
+      contact: user.comtact,
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: false,

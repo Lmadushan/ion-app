@@ -6,13 +6,17 @@
 
 <ion-content>
 <ion-title style="text-align:center">
-  <h2>Helloo again!</h2>
+  <h2 *ngIf="isLogged() && user.roles.tourist === true || isLogged() && user.roles.guide ===true">Helloo again!</h2>
+  <h2 *ngIf="isLogged() && user.roles.admin === true">Ooooops!</h2>
   <br>
-  <h2>{{user.email}}</h2>
+  <h2 *ngIf="isLogged() && user.roles.tourist === true || isLogged() && user.roles.guide ===true">{{user.email}}</h2>
+
+  <h2 *ngIf="isLogged() && user.roles.admin === true">Please Login with <br>our Website</h2>
 </ion-title>
 
 
 <ion-button expand="block" fill="outline" *ngIf="isLogged() && user.roles.guide === true" [routerLink]="['/user-profile']">Continue</ion-button>
 <ion-button expand="block" fill="outline" *ngIf="isLogged() && user.roles.tourist === true" [routerLink]="['/tourist-profile']">Continue</ion-button>
+<ion-button expand="block" fill="outline" *ngIf="isLogged() && user.roles.admin === true" (click)="authService.SignOut()">OK</ion-button>
 
 </ion-content>

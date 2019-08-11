@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './shared/services/auth.service';
 import { User } from './shared/services/user/user';
+import { timingSafeEqual } from 'crypto';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ export class AppComponent implements OnDestroy{
     email: '',
     emailVerified: false,
     photoURL: '',
+    contact: '',
     roles: {
       guide: false,
       tourist: false,
@@ -51,6 +53,7 @@ export class AppComponent implements OnDestroy{
         this.user.roles.tourist = usr.roles.tourist;
         this.user.displayName = usr.displayName;
         this.user.emailVerified = usr.emailVerified;
+        this.user.contact = usr.contact;
         this.user.email = usr.email;
         this.user.uid = usr.uid;
       }

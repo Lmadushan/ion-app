@@ -14,6 +14,7 @@ export class DashboardPage implements OnInit {
     uid: '',
     displayName: '',
     email: '',
+    contact: '',
     emailVerified: false,
     photoURL: '',
     roles: {
@@ -36,9 +37,11 @@ export class DashboardPage implements OnInit {
         localStorage.setItem('user', JSON.stringify(usr));
         this.user.roles.guide = usr.roles.guide;
         this.user.roles.tourist = usr.roles.tourist;
+        this.user.roles.admin = usr.roles.admin;        
         this.user.displayName = usr.displayName;
         this.user.emailVerified = usr.emailVerified;
         this.user.email = usr.email;
+        this.user.contact = usr.contact;
         this.user.uid = usr.uid;
       }
     });
