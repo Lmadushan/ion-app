@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <table class="table table-hover">
+        <tbody>
+          <tr *ngFor="let tr of list">
+            <td *ngIf="tr.id = pid">
+              <p>{{tr.packageName}}</p>
+              <p>Rs. {{tr.price}}</p>
+              <p>{{tr.duration}} Days</p>
+              <p>{{tr.description}}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</ion-content>

@@ -34,7 +34,8 @@ const routes: Routes = [
   { path: 'view-rating', loadChildren: './pages/guide/view-rating/view-rating.module#ViewRatingPageModule', canActivate: [GuideGuard]},
   { path: 'user-profile', loadChildren: './pages/guide/user-profile/user-profile.module#UserProfilePageModule', canActivate: [GuideGuard]},
   { path: 'add-loc-uv', loadChildren: './pages/guide/add-loc-uv/add-loc-uv.module#AddLocUvPageModule', canActivate: [GuideGuard] },
-
+  { path: 'package/:id', loadChildren: './pages/guide/package/package.module#PackagePageModule' },
+  
   //Tourist routes
   { path: 'tourist-profile', loadChildren: './pages/tourist/tourist-profile/tourist-profile.module#TouristProfilePageModule' },
   { path: 'package-list', loadChildren: './pages/tourist/package-list/package-list.module#PackageListPageModule' },
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'rate-guide', loadChildren: './pages/tourist/rate-guide/rate-guide.module#RateGuidePageModule' },
   { path: 'guide-profile/:id', loadChildren: './pages/tourist/guide-profile/guide-profile.module#GuideProfilePageModule' },
   { path: 'edit-user-profile', loadChildren: './pages/guide/edit-user-profile/edit-user-profile.module#EditUserProfilePageModule' },
+  
 ];
 
 @NgModule({
